@@ -1,0 +1,23 @@
+{
+  "name": "http-range-witness",
+  "state": "VALIDATED",
+  "user": "HTTP storage maintainer inspecting captured Range requests.",
+  "pain": "Explain suffix, open-ended and overlapping ranges and transfer amplification for a known representation size.",
+  "smallest_capability": "Bounded byte-range planner with per-member reasons, original request order and separate coalesced coverage.",
+  "acceptance": [
+    "Correct inclusive endpoints, clamping and nonzero suffixes.",
+    "Reject malformed or reversed ranges distinctly from unsatisfiable members.",
+    "Count repeated transfer bytes separately from unique covered bytes."
+  ],
+  "demand": "Inferred; range-parser's API and merge-order report establish an existing workflow, not missing competitor behavior.",
+  "discovery": "HTTP range debugging and download fixture examples.",
+  "distinctness": "No owned tool plans byte-range coverage; cache-header-contract concerns caching policy.",
+  "limits": "Nonempty representations only; no HTTP server, If-Range, encoding negotiation or multipart responses.",
+  "local_validation": {
+    "unit_tests": 14,
+    "wheel_and_clean_install": "PASS",
+    "Python": "Linux 3.12.14",
+    "remote_ci": "NOT_RUN"
+  },
+  "publication": "Website publication in progress; remote CI not yet verified"
+}

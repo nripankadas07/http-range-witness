@@ -1,0 +1,105 @@
+{
+  "name": "http-range-witness",
+  "state": "VALIDATED",
+  "tested": "Linux Python 3.12.14",
+  "unit_tests": 14,
+  "install_passed": true,
+  "remote_ci": "NOT_RUN",
+  "publication": "Website publication in progress; remote CI not yet verified",
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--wheel-dir",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness/wheelhouse",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness"
+      ],
+      "exit": 0,
+      "stdout": "Processing /workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: http-range-witness\n  Building wheel for http-range-witness (pyproject.toml): started\n  Building wheel for http-range-witness (pyproject.toml): finished with status 'done'\n  Created wheel for http-range-witness: filename=http_range_witness-0.1.0-py3-none-any.whl size=4061 sha256=0468efcffa1676f8332185d9be5c679660175042aa3db13c4ac37ee7c7578008\n  Stored in directory: /tmp/pip-ephem-wheel-cache-v696i7u6/wheels/b7/9c/2b/a49a742016396ae22060e8939f717263088297d8748d1193ed\nSuccessfully built http-range-witness\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "venv",
+        "/tmp/candidate-install-cobgg2o7/venv"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-cobgg2o7/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness/wheelhouse/http_range_witness-0.1.0-py3-none-any.whl"
+      ],
+      "exit": 0,
+      "stdout": "Processing /workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness/wheelhouse/http_range_witness-0.1.0-py3-none-any.whl\nInstalling collected packages: http-range-witness\nSuccessfully installed http-range-witness-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-cobgg2o7/venv/bin/http-range-witness",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/http-range-witness/example.json"
+      ],
+      "exit": 0,
+      "stdout": "{\"coverage\": [[0, 14], [95, 99]], \"repeated_bytes\": 5, \"requested_bytes\": 25, \"requests\": [{\"end\": 9, \"field\": \"0-9\", \"reason\": null, \"start\": 0}, {\"end\": 14, \"field\": \"5-14\", \"reason\": null, \"start\": 5}, {\"end\": 99, \"field\": \"-5\", \"reason\": null, \"start\": 95}, {\"end\": null, \"field\": \"150-\", \"reason\": \"starts_beyond_representation\", \"start\": null}], \"satisfiable\": true, \"unique_bytes\": 20}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-cobgg2o7/venv/bin/http-range-witness",
+        "/tmp/candidate-install-cobgg2o7/bad.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "input error: positive bounded representation size and Range string required\n"
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-cobgg2o7/venv/bin/http-range-witness",
+        "/tmp/candidate-install-cobgg2o7/missing.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "input error: [Errno 2] No such file or directory: '/tmp/candidate-install-cobgg2o7/missing.json'\n"
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-cobgg2o7/venv/bin/http-range-witness",
+        "/tmp/candidate-install-cobgg2o7/large.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "input error: input exceeds 1 MiB\n"
+    }
+  ],
+  "wheel": {
+    "name": "http_range_witness-0.1.0-py3-none-any.whl",
+    "sha256": "0468efcffa1676f8332185d9be5c679660175042aa3db13c4ac37ee7c7578008"
+  }
+}
