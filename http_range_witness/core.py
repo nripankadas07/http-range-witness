@@ -4,7 +4,7 @@ def run(data):
     size, header = data.get("size"), data.get("range")
     if type(size) is not int or not 0<size<=2**63-1 or not isinstance(header,str) or len(header)>4096:
         raise ValueError("positive bounded representation size and Range string required")
-    if not header.startswith("bytes="):
+    if header[:6].lower() != "bytes=":
         raise ValueError("only bytes unit supported")
     fields=header[6:].split(",")
     if not 1<=len(fields)<=32:
