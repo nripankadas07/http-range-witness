@@ -1,6 +1,8 @@
 # http-range-witness
 
-Public alpha prepared on 12 October 2026. **Remote verification pending; not yet a verified launch.**
+Public alpha published on 12 October 2026. Linux CI verified contract tests, compilation, wheel building and a clean installed example on Python 3.10, 3.12 and 3.14.
+
+[Current CI](https://github.com/nripankadas07/http-range-witness/actions) · [Runnable demo](DEMO.md) · [Research and alternatives](RESEARCH.md) · [Validation receipts](INSTALL_VALIDATION.json)
 Original Python implementation, MIT, zero runtime dependencies. AI-assisted development.
 
 HTTP storage maintainer inspecting captured Range requests. Explain suffix, open-ended and overlapping ranges and transfer amplification for a known representation size.
@@ -9,10 +11,12 @@ Bounded byte-range planner with per-member reasons, original request order and s
 
 ## Install and first useful result
 
-Python 3.10+ (only Linux Python 3.12.14 tested in this preparation). Build requires setuptools 61+ and wheel already available; install into a fresh venv uses only the generated wheel. Run source tests with your build interpreter:
+Python 3.10+; Linux Python 3.10, 3.12 and 3.14 are covered by CI. Other operating systems are untested. The wheel build may download setuptools and wheel from PyPI; installation of the resulting wheel has no runtime dependencies. From a clean source checkout:
 
 ```sh
-python -m pip wheel --no-index --no-deps --no-build-isolation --wheel-dir wheelhouse .
+git clone https://github.com/nripankadas07/http-range-witness.git
+cd http-range-witness
+python -m pip wheel --no-deps --wheel-dir wheelhouse .
 python -m venv .venv
 .venv/bin/python -m pip install --no-index --no-deps wheelhouse/*.whl
 .venv/bin/http-range-witness example.json
